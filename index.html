@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    function choice() {
+      let airport = document.getElementById("airport");
+
+      document.getElementById("value_area").innerHTML = airport.value;
+
+      let label = airport.options[airport.options.selectedIndex].text;
+      document.getElementById("label_area").innerHTML = label;
+    }
+
+    function add() {
+      let airport = document.getElementById("airport");
+      let option = document.createElement("option");
+      option.value = document.getElementById("new_value").value;
+      option.innerText = document.getElementById("new_label").value;
+      airport.appendChild(option);
+    }
+  </script>
+</head>
+<body>
+  <select name="" id="airport">
+    <option value="HND">東京国際空港</option>
+    <option value="NRT">成田国際空港</option>
+    <option value="NGO">中部国際空港</option>
+  </select>
+  <input type="button" value="選択" onclick="choice();">
+  <br>
+  <br>
+  <input type="text" id="new_value" value="CTS">
+  <input type="text" id="new_label" value="新千歳空港">
+  <input type="button" value="追加" onclick="add();">
+  <br>
+  <br>
+  <div id="value_area"></div>
+  <div id="label_area"></div>
+</body>
+</html>
